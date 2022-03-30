@@ -16,9 +16,9 @@ export default function DogView() {
     <div>
       {' '}
       {dogs.map((dog) => (
-        <p key={dog.id} to={`/dogs/${dog.id}`}>
+        <div key={dog.id} to={`/dogs/${dog.id}`}>
           <Dogs {...dog} />
-        </p>
+        </div>
       ))}
     </div>
   );
