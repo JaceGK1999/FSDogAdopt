@@ -11,6 +11,9 @@ export default function Links() {
         <li>
           <NavLink to={'/'}>Back to all dogs!</NavLink>
         </li>
+        <li>
+          <NavLink to={'/login'}>Come log in to create a dog!</NavLink>
+        </li>
       </ul>
     </div>
   );

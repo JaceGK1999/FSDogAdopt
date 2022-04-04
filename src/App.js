@@ -4,6 +4,7 @@ import './App.css';
 import CreateDog from './Components/CreateDog';
 import EditDog from './Components/EditDog';
 import SingleDog from './Components/SingleDog';
+import Auth from './Views/Auth';
 import DogView from './Views/DogsView';
 import Links from './Views/Header/Links';
 
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path={'/create'}>
           <CreateDog />
+        </Route>
+        <Route path={'/login'}>
+          <Auth />
         </Route>
       </BrowserRouter>
     </div>
