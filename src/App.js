@@ -1,18 +1,22 @@
+import { useState } from 'react';
 import { Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import CreateDog from './Components/CreateDog';
 import EditDog from './Components/EditDog';
 import SingleDog from './Components/SingleDog';
+import { getUser } from './services/user';
 import Auth from './Views/Auth';
 import DogView from './Views/DogsView';
 import Links from './Views/Header/Links';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(getUser());
+  // console.log(currentUser, 'current User');
   return (
     <div className="App">
       <BrowserRouter>
-        <Links />
+        <Links currentUser={currentUser} />
         <Route exact path={'/'}>
           <DogView />
         </Route>
@@ -26,7 +30,7 @@ function App() {
           <CreateDog />
         </Route>
         <Route path={'/login'}>
-          <Auth />
+          <Auth setCurrentUser={setCurrentUser} />
         </Route>
       </BrowserRouter>
     </div>
