@@ -10,11 +10,11 @@ export async function fetchDogById(id) {
 }
 
 export async function createDog(dog) {
-  const resp = await client.from('dogs').insert(dog);
+  const resp = await client.from('Dogs').insert(dog);
   return checkError(resp);
 }
 
 export async function updateDog(dog) {
-  const resp = await client.from('dogs').update(dog).match({ id: dog.id });
+  const resp = await client.from('Dogs').update(dog).match({ id: dog.id });
   return checkError(resp);
 }
