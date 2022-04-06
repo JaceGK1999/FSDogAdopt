@@ -29,7 +29,7 @@ export default function NewDog() {
       {error && (
         <p>
           {error}{' '}
-          <span onClick={() => setError('')}>Something went wrong when creating your dog!!!</span>
+          <span onClick={() => setError('')}> --- Something went wrong when creating your dog!!!</span>
         </p>
       )}
       <DogForm
