@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
 import EditDog from './Components/EditDog';
@@ -19,19 +19,18 @@ function App() {
         <Links currentUser={currentUser} />
         <Switch>
           <Route exact path={'/dog/:id/edit'}>
-            <EditDog />
+            {currentUser ? <EditDog /> : <Redirect to="/login" />}
           </Route>
           <Route exact path={'/dog/:id'}>
             <SingleDog />
           </Route>
           <Route exact path={'/create'}>
-            <NewDog />
+            {currentUser ? <NewDog /> : <Redirect to={'/login'} />}
           </Route>
           <Route exact path={'/login'}>
-            <Auth setCurrentUser={setCurrentUser} />
+            {!currentUser ? <Auth setCurrentUser={setCurrentUser} /> : <Redirect to={'/'} />}
           </Route>
           <Route exact path={'/'}>
-            {/* {(currentUser &&|| <Redirect to="/login" />} */}
             <DogView />)
           </Route>
         </Switch>
