@@ -31,7 +31,7 @@ export default function NewDog() {
           {error}{' '}
           <span onClick={() => setError('')}> --- Something went wrong when creating your dog!!!</span>
         </p>
-      )}
+      )}8
       <DogForm
         {...{
           name,
