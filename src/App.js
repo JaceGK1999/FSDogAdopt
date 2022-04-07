@@ -12,7 +12,6 @@ import NewDog from './Views/NewDog';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
-  console.log(currentUser, 'current User');
   return (
     <div className="App">
       <BrowserRouter>
